@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+class RLEIterator {
+   public:
+   vector <int> A;
+   int idx = 0;
+   RLEIterator(vector<int>& A) {
+      this->A = A;
+      idx = 0;
+   }
+   int next(int n) {
+      while(idx < A.size() && n > A[idx]){
+         n -= A[idx];
+         idx += 2;
+      }
+      if(idx >= A.size()) return -1;
+      A[idx] = A[idx] - n;
+      return A[idx + 1];
+   }
+};
+main(){
+   vector<int> v = {3,8,0,9,2,5};
+   RLEIterator ob(v);
+   cout << (ob.next(2)) << endl;
+   cout << (ob.next(1)) << endl;
+   cout << (ob.next(1)) << endl;
+   cout << (ob.next(2)) << endl;
+}
