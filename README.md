@@ -10,7 +10,7 @@ Dificulty - Easy/Medium/Hard
 <br />
 Problem number -
 <br />
-Link -
+Link :
 <br />
 
 // Code
